@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HUD: painel superior com pontuação, recorde, fase e escudo -->
+  <div id="hud">
+    <div class="hud-card">
+      <span class="hud-label">Pontos</span>
+      <span class="hud-value" id="score">0</span>
+    </div>
+    <div class="hud-card">
+      <span class="hud-label">Recorde</span>
+      <span class="hud-value" id="best">0</span>
+    </div>
+    <div class="hud-card">
+      <span class="hud-label">Fase</span>
+      <span class="hud-value" id="phase-num">1</span>
+    </div>
+    <div class="hud-card">
+      <span class="hud-label">Escudo</span>
+      <span class="hud-value" id="shield-val">—</span>
+    </div>
+  </div>
+
+  <!-- Área do jogo -->
+  <div id="canvas-wrap">
+
+    <!--  Canvas onde o jogo é desenhado com JavaScript -->
+    <canvas id="c" width="400" height="400"></canvas>
+
+    <!-- Flash dourado que aparece quando o escudo absorve um golpe -->
+    <div id="shield-flash"></div>
+
+    <!-- Tela de overlay: aparece no início, entre fases e no game over -->
+    <div id="overlay">
+      <div id="phase-badge">3 fases · obstáculos · fruta dourada · recorde salvo</div>
+      <h2 id="overlay-title">Jogo da Cobrinha</h2>
+      <p id="overlay-sub">Setas para mover · Espaço para confirmar</p>
+      <button id="btn-start">Iniciar jogo</button>
+      <span class="hint">ou pressione Espaço</span>
+    </div>
+
+    <!-- Aviso que aparece quando a cobra está esperando o jogador apertar uma seta -->
+    <div id="waiting-hint">Pressione uma seta para começar</div>
+
+  </div>
+
+  <!-- Indicadores de fase (bolinhas embaixo do canvas) -->
+  <div id="phase-bar">
+    <div class="phase-dot active" id="dot-1"></div>
+    <div class="phase-dot" id="dot-2"></div>
+    <div class="phase-dot" id="dot-3"></div>
+  </div>
+  
+  <!-- Controles de zoom -->
+<div id="zoom-controls">
+  <button class="zoom-btn" id="btn-zoom-out">−</button>
+  <span id="zoom-label">100%</span>
+  <button class="zoom-btn" id="btn-zoom-reset">↺</button>
+  <button class="zoom-btn" id="btn-zoom-in">+</button>
+</div>
+
+  <script src="game.js"></script>
+</body>
+</html>

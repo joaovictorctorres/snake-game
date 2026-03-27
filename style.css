@@ -1,0 +1,196 @@
+/* ===== RESET E BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0f0f0f;
+  color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 14px;
+}
+
+/* ===== HUD ===== */
+#hud {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hud-card {
+  background-color: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 8px 18px;
+  text-align: center;
+  min-width: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hud-label {
+  font-size: 11px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.hud-value {
+  font-size: 20px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+/* ===== CANVAS E OVERLAY ===== */
+#canvas-wrap {
+  position: relative;
+}
+
+canvas {
+  display: block;
+  border-radius: 12px;
+  border: 1px solid #2a2a2a;
+}
+
+/* Flash dourado do escudo */
+#shield-flash {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: rgba(250, 199, 117, 0.18);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+/* Tela de overlay */
+#overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+#phase-badge {
+  font-size: 12px;
+  background: rgba(127, 119, 221, 0.25);
+  color: #afa9ec;
+  border: 1px solid #7f77dd;
+  border-radius: 99px;
+  padding: 4px 14px;
+}
+
+#overlay h2 {
+  font-size: 22px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+#overlay p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+#overlay .hint {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+#btn-start {
+  margin-top: 4px;
+  padding: 10px 28px;
+  border-radius: 8px;
+  background: #7f77dd;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#btn-start:hover {
+  background: #534ab7;
+}
+
+/* Aviso de aguardando input */
+#waiting-hint {
+  position: absolute;
+  bottom: 14px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  pointer-events: none;
+  display: none;
+}
+
+/* ===== BOLINHAS DE FASE ===== */
+#phase-bar {
+  display: flex;
+  gap: 8px;
+}
+
+.phase-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #2a2a2a;
+  transition: background 0.3s;
+}
+
+.phase-dot.active {
+  background: #7f77dd;
+}
+/* ===== ZOOM CONTROLS ===== */
+#zoom-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.zoom-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: 1px solid #2a2a2a;
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zoom-btn:hover {
+  background-color: #2a2a2a;
+}
+
+.zoom-btn:active {
+  background-color: #7f77dd;
+}
+
+#zoom-label {
+  font-size: 13px;
+  color: #888;
+  min-width: 40px;
+  text-align: center;
+}
